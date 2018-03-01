@@ -1,0 +1,74 @@
+﻿@model CacheDemo.Models.Employee
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EmpName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmpName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JoiningDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JoiningDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DepartmentDeptId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DepartmentDeptId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeAddress_StreetNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeAddress_StreetNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeAddress_StreetName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeAddress_StreetName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeAddress_City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeAddress_City)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeAddress_State)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeAddress_State)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EmpID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

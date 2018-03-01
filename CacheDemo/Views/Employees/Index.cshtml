@@ -1,0 +1,72 @@
+﻿@model IEnumerable<CacheDemo.Models.Employee>
+<meta content="60" http-equiv="refresh"/>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+Data of the employees is fetched@@@DateTime.Now.ToLongTimeString()
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EmpName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JoiningDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartmentDeptId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeAddress_StreetNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeAddress_StreetName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeAddress_City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeAddress_State)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmpName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JoiningDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DepartmentDeptId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeeAddress_StreetNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeeAddress_StreetName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeeAddress_City)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeeAddress_State)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.EmpID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EmpID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.EmpID })
+        </td>
+    </tr>
+}
+
+</table>
+<div>
+    @Html.Action("GetStudentCount")
+</div>
